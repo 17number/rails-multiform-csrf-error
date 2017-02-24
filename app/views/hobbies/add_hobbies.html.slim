@@ -1,0 +1,11 @@
+h1 Add multi hobbies
+
+= form_tag commit_user_hobbies_path, method: :put do
+  - @hobbies.each do |hobby|
+    = fields_for "hobbies[]", hobby do |hf|
+      = hf.label :name
+      = hf.text_field :name
+      br
+  .actions = submit_tag
+
+= link_to 'Back', user_hobbies_path

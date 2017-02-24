@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong User:
+  = @hobby.user.name
+p
+  strong Name:
+  = @hobby.name
+
+= link_to 'Edit', edit_user_hobby_path(id: @hobby)
+'|
+= link_to 'Back', user_hobbies_path

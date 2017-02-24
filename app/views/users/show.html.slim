@@ -1,0 +1,14 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @user.name
+p
+  strong Hobby:
+  - @user.hobbies.each do |hobby|
+    = "#{hobby.name} "
+  = link_to 'Add hobby', new_user_hobby_path(@user)
+
+= link_to 'Edit', edit_user_path(@user)
+'|
+= link_to 'Back', users_path

@@ -1,0 +1,27 @@
+h1 Listing hobbies
+
+table
+  thead
+    tr
+      th User
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @hobbies.each do |hobby|
+      tr
+        td = hobby.user.name
+        td = hobby.name
+        td = link_to 'Show', [@user, hobby]
+        td = link_to 'Edit', edit_user_hobby_path(@user, hobby)
+        td = link_to 'Destroy', [@user, hobby], data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Hobby', new_user_hobby_path
+br
+= link_to 'Add Multi Hobby', add_user_hobbies_path
+br
+= link_to 'Back to user', user_path(@user)
